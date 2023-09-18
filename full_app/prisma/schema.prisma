@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model flights {
+  id                Int     @id @default(autoincrement())
+  flightcompanylogo String?
+  flightcompany     String?
+  flightcode        String
+  s_time            String?
+  d_time            String?
+  duration          String?
+  price             String?
+
+}
+
+model trains {
+  id       Int     @id @default(autoincrement())
+  trainName String
+  trainNo   String
+  s_name    String
+  s_time    String
+  d_time    String
+  d_name    String
+  duration  String
+  price     String
+}
+
+model buses {
+  id        Int      @id @default(autoincrement())
+  buscompany String
+  bustype    String
+  s_name     String
+  s_time     String
+  d_name     String
+  d_time     String
+  duration   String
+  price      String
+}
+
+model cabs {
+  id        Int      @id @default(autoincrement())
+  cabCar    String
+  cabFacilities String
+  cabPrice  String
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  name     String
+  email    String   @unique
+  mobile   String
+  createdAt DateTime @default(now())
+}
