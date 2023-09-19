@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
       </Head>
       <header className="bg-blue-600 text-white p-4 flex justify-between items-center">
         <div className="container mx-auto">
-          <h1 className="text-2xl font-semibold underline">TravelUs</h1>
+        <h1 className='font-serif text-4xl text-cyan-100 flex items-center italic underline md:mr-20'>TravelUs</h1>
         </div>
         <div className='flex justify-evenly'>
 

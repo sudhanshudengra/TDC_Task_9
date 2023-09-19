@@ -16,8 +16,8 @@ const PartnerCarousel = () => {
   ];
 
   return (
-    <div className="bg-gray-100 p-4">
-      <div className="max-w-screen-xl mx-auto">
+    <div className="bg-gray-100 md:p-4">
+      <div className="max-w-screen-xl md:mx-auto">
         <h2 className="text-3xl font-semibold mb-4 text-blue-600 underline">Our Special Partners</h2>
         <Carousel
           showArrows={false}
@@ -29,7 +29,7 @@ const PartnerCarousel = () => {
           interval={2500}
         >
           {partners.map((partner, index) => (
-            <div key={index} className='rounded-3xl mx-80'>
+            <div key={index} className='rounded-3xl md:mx-80'>
               <img src={partner.logo} alt={partner.name} className=" object-cover" />
               {/* <p className="text-center">{partner.name}</p> */}
             </div>

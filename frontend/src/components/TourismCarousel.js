@@ -8,7 +8,7 @@ const TourismCarousel = () => {
   return (
     <div className="bg-gray-100 p-4">
       <div className="max-w-screen-xl mx-auto">
-      <h2 className="text-3xl font-semibold text-blue-600 underline">World's Trending Locations</h2>
+      <h2 className="text-3xl font-semibold text-blue-600 underline pb-0.5">World's Trending Locations</h2>
         {/* Carousel */}
         <div className="w-full max-w-xl mx-auto">
       <Carousel Carousel autoPlay infiniteLoop showStatus={false} showThumbs={false}>

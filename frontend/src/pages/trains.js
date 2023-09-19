@@ -10,7 +10,6 @@ const TrainsPage = ({ trains }) => {
   const filteredTrains = trains.filter((train) =>
     train.trainNo.includes(searchTerm)
   );
-
   return (
     <Layout>
       <Head>
@@ -31,12 +30,13 @@ const TrainsPage = ({ trains }) => {
             <thead>
               <tr>
                 <th className="px-4 py-2">Train Name</th>
-                <th className="px-4 py-2">Train No|Schedule</th>
+                <th className="px-4 py-2">Train No</th>
                 <th className="px-4 py-2">Departure Time</th>
                 <th className="px-4 py-2">Arrival Time</th>
                 <th className="px-4 py-2">Destination Station</th>
                 <th className="px-4 py-2">Duration</th>
                 <th className="px-4 py-2">Price</th>
+                <th className="px-4 py-2">Schedule</th>
               </tr>
             </thead>
             <tbody>
@@ -49,6 +49,7 @@ const TrainsPage = ({ trains }) => {
                   <td className="px-4 py-2">{train.d_name}</td>
                   <td className="px-4 py-2">{train.duration}</td>
                   <td className="px-4 py-2">{train.price}</td>
+                  <td className="px-4 py-2">{train.schedule}</td>
                 </tr>
               ))}
             </tbody>

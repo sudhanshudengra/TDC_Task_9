@@ -38,7 +38,7 @@ model flights {
 }
 
 model trains {
-  id        Int    @id @default(autoincrement())
+  id        Int     @id @default(autoincrement())
   trainName String
   trainNo   String
   s_name    String
@@ -47,6 +47,7 @@ model trains {
   d_name    String
   duration  String
   price     String
+  schedule  String?
 }
 
 model User {
