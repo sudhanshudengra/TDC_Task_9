@@ -8,7 +8,7 @@ const FlightsPage = ({ flights }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
  const filteredFlights = flights.filter((flight) =>
-  flight.flightcode.toString().includes(searchTerm.toString())
+  flight.flightcode.toString().toUpperCase().includes(searchTerm.toString().toUpperCase())
 );
 
   return (

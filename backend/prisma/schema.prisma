@@ -17,11 +17,10 @@ model flights {
   d_time            String?
   duration          String?
   price             String?
-
 }
 
 model trains {
-  id       Int     @id @default(autoincrement())
+  id        Int     @id @default(autoincrement())
   trainName String
   trainNo   String
   s_name    String
@@ -30,10 +29,11 @@ model trains {
   d_name    String
   duration  String
   price     String
+  schedule  String?
 }
 
 model buses {
-  id        Int      @id @default(autoincrement())
+  id         Int    @id @default(autoincrement())
   buscompany String
   bustype    String
   s_name     String
@@ -45,16 +45,16 @@ model buses {
 }
 
 model cabs {
-  id        Int      @id @default(autoincrement())
-  cabCar    String
+  id            Int    @id @default(autoincrement())
+  cabCar        String
   cabFacilities String
-  cabPrice  String
+  cabPrice      String
 }
 
 model User {
-  id       Int      @id @default(autoincrement())
-  name     String
-  email    String   @unique
-  mobile   String
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  mobile    String
   createdAt DateTime @default(now())
 }

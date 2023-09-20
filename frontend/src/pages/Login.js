@@ -45,10 +45,25 @@ const Login = () => {
 
   const handleUpdateUser = async (userId) => {
     try {
-      await prisma.User.update({
-        where: { id: userId },
-        data: { name, email, mobile },
+      const response = await axios.put('/api/users', {
+        id: userId,
+        name,
+        email,
+        mobile,
       });
+      setFetchedUsers((prevUsers) =>
+        prevUsers.map((User) => {
+          if (User.id === userId) {
+            return {
+              ...User,
+              name,
+              email,
+              mobile,
+            };
+          }
+          return User;
+        })
+      );
       alert('User updated successfully');
     } 
     catch (error) {
@@ -60,9 +75,14 @@ const Login = () => {
 
   const handleDeleteUser = async (userId) => {
     try {
-      await prisma.User.delete({
-        where: { id: userId },
+      const response = await axios.delete('/api/users', {
+        data: { id: userId },
       });
+      // setFetchedUsers(response.data);
+                          // await prisma.User.delete({
+                          //   where: { id: userId },
+                          // });
+                          // console.log(userId)
       alert('User deleted successfully');
       // Remove the deleted User
       setFetchedUsers((prevUsers) => prevUsers.filter((User) => User.id !== userId));
